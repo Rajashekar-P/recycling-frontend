@@ -15,7 +15,7 @@ Follow these steps to clone, install dependencies, and run the project locally.
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/DylanMullen/recycling-project.git
+git clone
 ```
 
 2. **Navigate to the project directory:**
