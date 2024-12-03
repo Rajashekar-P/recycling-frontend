@@ -1,0 +1,104 @@
+.switch
+{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+
+    &--disabled
+    {
+        .switch__slider
+        {
+            cursor: not-allowed;
+            background-color: var(--inputColorDisabled);
+        }
+    }
+
+    &__label
+    {
+        font-weight: 700;
+    }
+
+    &__container
+    {
+        position: relative;
+        width: 3rem;
+        height: 1.5rem;
+
+
+    }
+
+    &__input
+    {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__slider
+    {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+
+        background-color: var(--inputColor);
+        transition: background-color 150ms ease-in;
+        border-radius: 25%/50%;
+
+        box-shadow: inset 1px 1px .25rem rgba(1, 1, 1, 0.25);
+        width: 3rem;
+        height: 1.5rem;
+
+        &:before
+        {
+            position: absolute;
+            content: "";
+            height: 75%;
+            aspect-ratio: 1/1;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+
+            top: 50%;
+            left: .25rem;
+            transform: translateY(-50%);
+
+            transition: transform 150ms ease-in;
+
+            box-shadow:  1px 1px .25rem rgba(1, 1, 1, 0.25);
+
+        }
+
+    }
+
+    &__input:checked+&__slider
+    {
+        // background-color: #7ae582;
+        background-color: var(--outlineColor);
+    }
+
+    &__input:checked+&__slider:before
+    {
+        // transform: translateX(100%) translateY(-50%);
+        // left: 100%;
+        transform: translateX(calc(calc(3rem - .5rem) - 100%)) translateY(-50%)
+    }
+
+    &__input:focus+&__slider::after
+    {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        box-shadow: 0 0 .2rem .05rem var(--outlineColor);
+    }
+    
+
+}

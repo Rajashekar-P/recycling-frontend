@@ -1,0 +1,68 @@
+.stats
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__header
+    {
+        font-size: 2rem;
+        line-height: .8;
+    }
+
+    &__subtext
+    {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &__wells
+    {
+        display: grid;
+        place-content: center;
+        grid-template-columns: repeat(3, 450px);
+        gap: 1rem;
+    }
+
+    &__content
+    {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding-left: 3.5rem;
+    }
+
+    &__icon
+    {
+        font-size: 4rem;
+        color: white;
+
+        svg
+        {
+            // filter: drop-shadow(0 0 crimson);
+            filter: drop-shadow(0px 0px 2px rgb(41, 41, 41));
+                        // stroke: #646464;
+            // stroke-width: 1px;
+            // stroke-dasharray: 2, 2;
+            // stroke-linejoin: round;
+        }
+    }
+
+    &__text
+    {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        span
+        {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__subtitle
+    {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}

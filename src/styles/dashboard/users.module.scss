@@ -1,0 +1,57 @@
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+
+.users
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__header
+    {
+        font-size: 2rem;
+        
+    }
+    &__list
+    {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    &__controls
+    {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: $vw-tablet) {
+        &__list
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: $vw-tablet) {
+        &__list
+        {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (min-width: $vw-laptops) {
+        &__list
+        {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    @media (min-width: $vw-desktop) {
+        &__list
+        {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}

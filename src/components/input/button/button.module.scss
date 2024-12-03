@@ -1,0 +1,87 @@
+@use 'sass:color';
+
+// $primary: ;
+// // $success: #32b85a;
+// // $warning: #f0680d;
+// // $error: #d60707;
+
+$colours: (
+    "primary": #5c96cc,
+    "success":#32b85a,
+    "warning": #f0680d,
+    "error": #d60707,
+);
+
+.btn
+{
+    padding: .5rem .75rem;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1rem;
+    cursor: pointer;
+
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-align: center;
+
+    border: none;
+    border-radius: .25rem;
+    color: white;
+    transition: background-color 300ms var(--pop);
+
+
+    &:disabled
+    {
+        cursor: not-allowed;
+    }
+
+
+    @each $name, $colour in $colours
+    {
+        &--#{$name}
+        {
+            background-color: $colour;
+        }
+
+        &--#{$name}:hover,
+        &--#{$name}:focus
+        {
+            background-color: color.scale($colour, $lightness: 10%);
+        }
+
+        &--#{$name}:active
+        {
+            background-color: color.scale($colour, $lightness: -5%)
+        }
+    }
+
+    &--outline
+    {
+        background-color: transparent;
+        transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+        box-sizing: content-box;
+
+        @each $name, $colour in $colours
+        {
+            &.btn--#{$name}
+            {
+                border: 3px solid $colour;
+                color: color.scale($colour, $lightness: -10%);
+            }
+
+            &.btn--#{$name}:hover,
+            &.btn--#{$name}:focus
+            {
+                background-color: $colour;
+                color: white;
+            }
+
+            &.btn--#{$name}:active
+            {
+                background-color: color.scale($colour, $lightness: -5%);
+                color: white;
+            }
+        }
+    }
+
+}

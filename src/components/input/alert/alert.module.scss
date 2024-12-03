@@ -1,0 +1,77 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: zoomIn 0.3s ease-out;
+}
+
+.success {
+  background-color: #e8f5e9;
+  border-left: 5px solid #388e3c;
+  color: #388e3c;
+}
+
+.error {
+  background-color: #fbe9e7;
+  border-left: 5px solid #f44336;
+  color: #f44336;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.message {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+.closeButton {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2c6c2f;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,37 @@
+// @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    
+    --inputColor: rgb(240, 240, 240);
+    --inputColorDisabled: rgb(224, 224, 224);
+    --outlineColor: #5c96cc;
+
+    --pop: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    padding-top: 1.5rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 99%);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.required
+{
+    color: rgb(214, 7, 7);
+    font-weight: 800;
+}

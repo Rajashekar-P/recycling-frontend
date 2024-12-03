@@ -1,0 +1,54 @@
+.calendar
+{
+    padding: .5rem;
+    padding-right: 1.8rem;
+    position: relative;
+    width: 100%;
+    font-size: inherit;
+
+    border-radius: .25rem;
+    // border: 2px solid rgb(24, 24, 24);
+    border: 1px solid var(--inputColor);
+
+    background-color: var(--inputColor);
+
+    // outline: 1px solid var(--outlineColor);
+
+    // transition: border 150ms ease-in-out;
+
+    transition: border-color 150ms ease-in, box-shadow 150ms ease-in;
+
+    font-family: inherit;
+
+    &__wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        font-size: 1rem;
+
+        border-radius: .5rem;
+        width: 100%;
+    }
+
+    &__label
+    {
+        font-weight: 700;
+    }
+
+    &:focus,
+    &:focus-within
+    {
+        outline: none;
+        box-shadow: 0 0 .2rem .05rem var(--outlineColor);
+        // border: 1px solid ;
+        border-color: var(--outlineColor);
+
+    }
+
+    &--required
+    {
+        border-color: rgb(214, 7, 7);
+    }
+}

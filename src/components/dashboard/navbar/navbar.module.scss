@@ -1,0 +1,122 @@
+$background: #181C14;
+
+$linkHover: hsl(248, 73%, 60%);
+
+$navbarWidth: 6rem;
+$navbarOffset: 1rem;
+
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+.navbar
+{
+    background-color: $background;
+    position: fixed;
+    top: calc($navbarOffset + 3.3rem);
+    left: $navbarOffset;
+    // height: calc(100vh - ($navbarOffset * 2));
+    height: fit-content;
+    border-radius: .5rem;
+    width: $navbarWidth;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem 0;
+
+    z-index: 999;
+
+    &__links
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        text-decoration: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media (max-width: $vw-laptops)
+    {
+        bottom: 0;
+        top: initial;
+
+        height: 5rem;
+        border-radius: 0;
+
+        padding: 0;
+        justify-content: space-evenly;
+
+        width: 100%;
+        left: 0;
+
+        &__links
+        {
+            flex-direction: row;
+            height: 100%;
+            > * 
+            {
+                flex: 1;
+            }
+        }
+    }
+
+}
+
+.navlink
+{
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem;
+
+    color: white;
+
+    &__icon
+    {
+        display: grid;
+        place-content: center;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+
+    &__name
+    {
+        text-align: center;
+        font-size: .85rem;
+        font-weight: 600;
+    }
+
+    &__avatar
+    {
+        position: relative;
+        width: 2rem;
+        aspect-ratio: 1/1;
+    }
+
+    &:hover
+    {
+        background: $linkHover;
+    }
+
+    @media (max-width: $vw-laptops)
+    {
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        flex: 1;
+        align-items: center;
+        height: 100%;
+        gap: 0;
+    }
+
+}

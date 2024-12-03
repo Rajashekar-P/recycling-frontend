@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 20px 50px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  &:nth-child(odd) {
+    .text {
+      order: 1;
+    }
+    .image {
+      order: 2;
+    }
+  }
+
+  &:nth-child(even) {
+    .text {
+      order: 2;
+    }
+    .image {
+      order: 1;
+    }
+  }
+}
+
+.text {
+  flex: 1;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: center;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
+  }
+}
+
+.image {
+  flex: 1;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 65vh;
+  overflow-y: auto;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  grid-column: 1 / -1; /* Span the entire width */
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.form > *:nth-child(odd) {
+  grid-column: span 1;
+}
+
+.form > *:nth-child(even) {
+  grid-column: span 1;
+}
+
+.buttons button {
+  width: 100%; /* Ensure button takes full width */
+}

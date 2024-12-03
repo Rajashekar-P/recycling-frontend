@@ -1,0 +1,121 @@
+// Breakpoints
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0rem;
+
+  @media (min-width: $vw-mobile) {
+    padding: 0.5rem 1rem;
+  }
+
+  @media (min-width: $vw-tablet) {
+    padding: 0.5rem 1.5rem;
+  }
+
+  @media (min-width: $vw-laptops) {
+    padding: 0.5rem 2.5rem;
+  }
+
+  @media (min-width: $vw-desktop) {
+    padding: 0.5rem 3em;
+  }
+
+  background-color: #212121;
+  color: #fff;
+
+  height: 3.3rem;
+
+  // Remove if we no longer want the nav bar sticky to the top
+  position: fixed; /* Makes the navbar fixed at the top */
+  top: 0; /* Aligns the navbar to the top of the page */
+  left: 0; /* Aligns the navbar to the left of the page */
+  width: 100%; /* Makes the navbar span the full width of the screen */
+  z-index: 1000; /* Ensures the navbar stays above other content */
+}
+
+.logo img {
+  max-width: 2.7rem;
+  max-height: 2.7rem;
+  margin-top: 0.3rem;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem; // Default gap for smaller screens
+
+  @media (min-width: $vw-mobile) {
+    gap: 0.5rem;
+  }
+
+  @media (min-width: $vw-tablet) {
+    gap: 2rem;
+  }
+
+  @media (min-width: $vw-laptops) {
+    gap: 2.5rem;
+  }
+
+  @media (min-width: $vw-desktop) {
+    gap: 3rem;
+  }
+}
+
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownToggle {
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  list-style: none;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  min-width: 10rem;
+}
+
+.dropdownMenu a {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown:hover .dropdownMenu {
+  display: block;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: #007BFF; // Example color for logout
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.logoutButton:hover {
+  color: #0056b3;
+}
+

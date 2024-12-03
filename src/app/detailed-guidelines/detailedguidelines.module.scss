@@ -1,0 +1,241 @@
+
+
+$primary-color: #2563eb;
+$secondary-color: #1e40af;
+$success-color: #059669;
+$warning-color: #d97706;
+$danger-color: #dc2626;
+$text-dark: #1f2937;
+$text-light: #6b7280;
+$background-light: #f9fafb;
+$spacing-unit: 1rem;
+$border-radius: 8px;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+  background-color: $background-light;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-unit * 4;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: $spacing-unit;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: $text-light;
+  }
+}
+
+.section {
+  background-color: white;
+  border-radius: $border-radius;
+  padding: $spacing-unit * 2;
+  margin-bottom: $spacing-unit * 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    color: $primary-color;
+    margin-bottom: $spacing-unit * 2;
+    
+    .icon {
+      margin-right: $spacing-unit;
+    }
+  }
+
+  .content {
+    color: $text-dark;
+  }
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-unit * 2;
+
+  .category {
+    h3 {
+      font-size: 1.25rem;
+      color: $secondary-color;
+      margin-bottom: $spacing-unit;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        padding: ($spacing-unit * 0.5) 0;
+        border-bottom: 1px solid #e5e7eb;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+.hazardousGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-unit * 2;
+
+  .hazardousItem {
+    background-color: #fee2e2;
+    padding: $spacing-unit;
+    border-radius: $border-radius;
+    border-left: 4px solid $danger-color;
+
+    h3 {
+      color: $danger-color;
+      margin-bottom: $spacing-unit;
+    }
+
+    p {
+      margin-bottom: ($spacing-unit * 0.5);
+      font-size: 0.95rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.proceduresList {
+  .procedure {
+    margin-bottom: $spacing-unit * 2;
+
+    h3 {
+      color: $secondary-color;
+      margin-bottom: $spacing-unit;
+      font-size: 1.2rem;
+    }
+
+    ul {
+      padding-left: $spacing-unit * 1.5;
+      
+      li {
+        margin-bottom: ($spacing-unit * 0.5);
+      }
+    }
+  }
+}
+
+.securitySteps {
+  .step {
+    margin-bottom: $spacing-unit * 2;
+
+    h3 {
+      color: $secondary-color;
+      margin-bottom: $spacing-unit;
+    }
+
+    ol {
+      padding-left: $spacing-unit * 1.5;
+      
+      li {
+        margin-bottom: ($spacing-unit * 0.5);
+      }
+    }
+  }
+}
+
+.bestPractices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-unit * 2;
+
+  .dosList, .dontsList {
+    h3 {
+      color: $text-dark;
+      margin-bottom: $spacing-unit;
+    }
+
+    ul {
+      padding-left: $spacing-unit * 1.5;
+      
+      li {
+        margin-bottom: ($spacing-unit * 0.5);
+      }
+    }
+  }
+
+  .dosList {
+    ul li::marker {
+      color: $success-color;
+    }
+  }
+
+  .dontsList {
+    ul li::marker {
+      color: $danger-color;
+    }
+  }
+}
+
+.environmental {
+  h3 {
+    color: $success-color;
+    margin: $spacing-unit 0;
+  }
+
+  ul {
+    padding-left: $spacing-unit * 1.5;
+    margin-bottom: $spacing-unit * 2;
+    
+    li {
+      margin-bottom: ($spacing-unit * 0.5);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer {
+  margin-top: $spacing-unit * 4;
+  padding-top: $spacing-unit * 2;
+  border-top: 1px solid #e5e7eb;
+
+  .disclaimer {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
+    color: $warning-color;
+    font-size: 0.95rem;
+
+    .icon {
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: $spacing-unit;
+  }
+
+  .header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/* General dashboard styling */
+.admin-dashboard {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.admin-dashboard h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table styling */
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table headers styling */
+.admin-dashboard th {
+  background-color: #007BFF;
+  color: #fff;
+  text-align: left;
+  padding: 12px 15px;
+}
+
+/* Table cells styling */
+.admin-dashboard td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+/* Table row hover effect */
+.admin-dashboard tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Empty state styling */
+.admin-dashboard tr.empty-state {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}
+
+/* Contact section styling */
+.admin-dashboard td .contact-info {
+  margin-top: 10px;
+}
+
+.admin-dashboard td .contact-info p {
+  margin: 5px 0;
+}
+
+.admin-dashboard td .contact-info strong {
+  font-weight: bold;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .admin-dashboard table {
+    font-size: 14px;
+  }
+
+  .admin-dashboard th,
+  .admin-dashboard td {
+    padding: 8px 10px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 1.5em;
+  }
+}

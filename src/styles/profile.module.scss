@@ -1,0 +1,142 @@
+@use "sass:color";
+
+$badgeMember: #CEDF9F;
+$badgeAdmin: #FCDC94;
+
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+
+.row
+{
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    @media (max-width: $vw-tablet) {
+        flex-wrap: wrap;
+        gap: 1rem;
+        >*{
+            width: 100%;
+        }
+    }
+}
+
+.profile
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    justify-content: center;
+    align-items: center;
+
+    --badgeColor: #{$badgeMember};
+    --badgeBorderColor: #{color.scale($badgeMember, $lightness: -5%)};
+
+    &--admin
+    {
+        --badgeColor: #{$badgeAdmin};
+        --badgeBorderColor: #{color.scale($badgeAdmin, $lightness: -5%)};
+    }
+
+    &__avatar
+    {
+        &__wrapper
+        {
+            position: relative;
+            width: 15rem;
+            aspect-ratio: 1/1;
+        }
+        position: relative;
+    }
+    &__information
+    {
+        width: 60%;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        &__content
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1;
+        }
+    }
+
+    &__controls
+    {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    &__badge
+    {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%) translateY(25%);
+
+        font-size: 1.25rem;
+        background-color: var(--badgeColor);
+        padding: .25rem 1rem;
+        border-radius: .5rem;
+        border: 2px solid var(--badgeBorderColor);
+        // text-transform: uppercase;
+        font-weight: 700;
+
+        box-shadow: 0 0 30px rgba(0,0,0,0.25);
+        color: rgb(27, 27, 27);
+    }
+
+    @media (max-width: $vw-laptops) {
+        &__information
+        {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.pickups
+{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.delete-modal
+{
+    &__warning
+    {
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            font-size: 1.25rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+    &__confirmation
+    {
+        grid-column: span 2;
+    }
+
+    &__submission
+    {
+        margin-top: 1rem;
+        display: grid;
+        align-items: end;
+        gap: 1rem;
+        row-gap: .5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}

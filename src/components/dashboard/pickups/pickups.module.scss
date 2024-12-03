@@ -1,0 +1,96 @@
+$tableColor: var(--inputColor);
+$tableRowAlt: var(--inputColorDisabled);
+$tableHover: rgb(199, 199, 199);
+
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+.pickups
+{
+    width: 100%;
+
+    background-color: #{$tableColor};
+    border-spacing: 0px;
+
+    border-radius: .5rem;
+    overflow: hidden;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+
+    td,
+    th
+    {
+        text-align: left;
+    }
+
+    thead
+    {
+        background-color: $tableRowAlt;
+        font-size: 1.25rem;
+        border-top-left-radius: .5rem;
+    }
+
+    th,
+    td
+    {
+        padding: .5rem;
+    }
+
+    td
+    {
+        height: 48px;
+    }
+
+    tbody tr
+    {
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: #{$tableHover};
+        }
+    }
+
+
+
+    td:nth-child(4)
+    {
+        display: flex;
+        place-content: center;
+        gap: .5rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+    }
+
+    tr:nth-child(2n)
+    {
+        background-color: $tableRowAlt;
+    }
+
+    tr:hover td:nth-child(4),
+    tr:focus-within td:nth-child(4)
+    {
+        opacity: 1;
+    }
+
+    @media (max-width: $vw-tablet)
+    {
+        thead
+        {
+            font-size: 1rem;
+        }
+
+        th,
+        td
+        {
+            padding: 0 0.25rem;
+        }
+
+        td:nth-child(4)
+        {}
+    }
+}

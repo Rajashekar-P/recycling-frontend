@@ -1,0 +1,31 @@
+@use "../components/dashboard/navbar/navbar.module.scss" as nav;
+
+$contentPadding: 2rem;
+
+$vw-mobile: 480px;
+$vw-tablet: 768px;
+$vw-laptops: 1024px;
+$vw-desktop: 1200px;
+
+@function getPadding()
+{
+    @return (nav.$navbarOffset * 2)+nav.$navbarWidth +$contentPadding;
+}
+
+.content
+{
+    width: 100%;
+    min-height: 100vh;
+    padding: #{$contentPadding};
+    padding-left: getPadding();
+    padding-top: 3rem;
+
+    @media (max-width: $vw-laptops)
+    {
+        padding: 1rem;
+        padding-top: 3rem;
+        padding-bottom: 7rem;
+    }
+
+}
+

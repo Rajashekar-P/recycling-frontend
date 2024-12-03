@@ -1,0 +1,84 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+}
+
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th,
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: bold;
+    color: #555;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.productImage {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buyButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #3a8fce;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #3077ab;
+  }
+}
+
+.modalImage {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  margin: 20px;
+}
+
+// Modal container
+.modalContent {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.modalContent p {
+  font-weight: bold;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}

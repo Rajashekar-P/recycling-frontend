@@ -1,0 +1,49 @@
+.number
+{
+
+    padding: .5rem;
+    border-radius: .25rem;
+
+    border: 1px solid var(--inputColor);
+    background-color: var(--inputColor);
+    width: 100%;
+    font-size: 1rem;
+
+    transition: border-color 150ms ease-in, box-shadow 150ms ease-in;
+
+    &:focus,
+    &:focus-within
+    {
+        outline: none;
+        box-shadow: 0 0 .2rem .05rem var(--outlineColor);
+        border-color: var(--outlineColor);
+
+    }
+
+    &__label
+    {
+        font-weight: 700;
+    }
+
+    &__container
+    {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--required
+    {
+        border-color: rgb(214, 7, 7);
+    }
+
+    &:disabled
+    {
+        background-color: var(--inputColorDisabled);
+        border-color: var(--inputColorDisabled);
+        cursor: not-allowed;
+    }
+
+}

@@ -1,0 +1,32 @@
+.select
+{
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: .25rem;
+    border: 1px solid var(--inputColor);
+    width: 100%;
+    cursor: pointer;
+    
+    &__label
+    {
+        font-weight: 700;
+    }
+    
+    &__container
+    {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    &--required
+    {
+        border-color: rgb(214, 7, 7);
+    }   
+
+    &:disabled
+    {
+        background-color: var(--inputColorDisabled);
+        cursor: not-allowed;
+    }
+}
